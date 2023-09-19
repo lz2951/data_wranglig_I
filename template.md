@@ -16,6 +16,11 @@ library(tidyverse)
     ## ✖ dplyr::lag()    masks stats::lag()
     ## ℹ Use the conflicted package (<http://conflicted.r-lib.org/>) to force all conflicts to become errors
 
+``` r
+library(readxl)
+library(haven)
+```
+
 Let’s import the ‘FAS_litters.csv’ csv
 
 ``` r
@@ -250,3 +255,19 @@ litters_df =
 ```
 
     ## Warning: The following named parsers don't match the column names: gd0 weight
+
+## Other file types
+
+Import a xlsx file first
+
+``` r
+mlb_df =
+  read_excel("data/mlb11.xlsx")
+```
+
+Import a SAS file
+
+``` r
+pulse_df =
+  read_sas("data/public_pulse_data.sas7bdat")
+```
